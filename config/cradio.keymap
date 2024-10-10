@@ -22,7 +22,8 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-     
+     };
+
     combos {
         compatible = "zmk,combos";
 
@@ -110,4 +111,5 @@
                                              &kp GRAVE        &to 0                &kp ENTER  &kp KP_NUMBER_0
             >;
         };
+    };
 };
