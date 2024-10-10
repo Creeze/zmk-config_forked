@@ -82,19 +82,19 @@
         };
     };
 
-     keymap {
+      keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
 &kp Q             &kp W           &kp F               &kp P               &kp G        &kp J      &kp L                &kp U                &kp Y            &kp SEMI
-&mt A LEFT_SHIFT  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_COMMAND T  &kp D        &kp H      &mt RIGHT_COMMAND N  &mt RIGHT_CONTROL E  &mt RIGHT_ALT I  &mt RIGHT_SHIFT O
+&mt LEFT_SHIFT A  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_COMMAND T  &kp D        &kp H      &mt RIGHT_COMMAND N  &mt RIGHT_CONTROL E  &mt RIGHT_ALT I  &mt RIGHT_SHIFT O
 &kp Z             &kp X           &kp C               &kp V               &kp B        &kp K      &kp M                &kp COMMA            &kp DOT          &kp QUESTION
                                                       &kp ESC             &kp SPACE    &kp ENTER  &kp BSPC
             >;
         };
 
-        raise {
+        rise {
             bindings = <
 &kp EXCLAMATION    &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT         &kp CARET      &kp AMPERSAND   &kp ASTERISK    &kp PIPE        &kp TILDE
 &kp DOUBLE_QUOTES  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LESS_THAN       &kp SLASH      &kp LEFT_ARROW  &kp UP_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW
