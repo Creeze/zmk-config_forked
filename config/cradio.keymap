@@ -51,10 +51,10 @@
             layers = <0 1 2>;
         };
 
-        riseLShift {
+        allLShift {
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <13 12>;
-            layers = <1>;
+            layers = <1 0 2>;
         };
 
         riseLOption {
@@ -63,34 +63,39 @@
             layers = <1>;
         };
 
-        home {
-            bindings = <&kp HOME>;
+        headOfRow {
+            bindings = <&kp LC(A)>;
             key-positions = <16 17>;
             layers = <0 1 2>;
         };
 
-        end {
-            bindings = <&kp END>;
+        endOfRow {
+            bindings = <&kp LC(E)>;
             key-positions = <18 19>;
             layers = <0 1 2>;
         };
 
-        allCommand {
+        allRCommand {
             bindings = <&kp RIGHT_COMMAND>;
             key-positions = <7 8>;
             layers = <0 1 2>;
         };
+
+        allLControl {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <21 22>;
+        };
     };
 
-      keymap {
+    keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp Q             &kp W           &kp F               &kp P               &kp G        &kp J      &kp L                &kp U                &kp Y            &kp SEMI
-&mt LEFT_SHIFT A  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_COMMAND T  &kp D        &kp H      &mt RIGHT_COMMAND N  &mt RIGHT_CONTROL E  &mt RIGHT_ALT I  &mt RIGHT_SHIFT O
-&kp Z             &kp X           &kp C               &kp V               &kp B        &kp K      &kp M                &kp COMMA            &kp DOT          &kp QUESTION
-                                                      &kp ESC             &kp SPACE    &kp ENTER  &kp BSPC
+&kp Q  &kp W  &kp F  &kp P       &kp G        &kp J      &kp L          &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T       &kp D        &kp H      &kp N          &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V       &kp B        &kp K      &kp M          &kp COMMA  &kp DOT  &kp QUESTION
+                     &kp ESCAPE  &kp SPACE    &kp ENTER  &kp BACKSPACE
             >;
         };
 
@@ -105,10 +110,10 @@
 
         lower {
             bindings = <
-&bootloader  &kp HOME        &kp UP_ARROW    &kp END          &kp K_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MULTIPLY
-&kp TAB      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_VOLUME_DOWN    &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
-&kp K_UNDO   &kp K_CUT       &kp K_COPY      &kp K_PASTE      &kp K_REDO           &kp EQUAL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE
-                                             &kp GRAVE        &to 0                &kp ENTER  &kp KP_NUMBER_0
+&bootloader  &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MULTIPLY
+&kp TAB      &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp K_VOLUME_DOWN    &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
+&kp K_UNDO   &kp K_CUT           &kp K_COPY      &kp K_PASTE          &kp K_REDO           &kp EQUAL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE
+                                                 &kp GRAVE            &to 0                &kp ENTER  &kp KP_NUMBER_0
             >;
         };
     };
