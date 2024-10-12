@@ -24,7 +24,7 @@
         };
      };
 
-    combos {
+   combos {
         compatible = "zmk,combos";
 
         toRise {
@@ -59,7 +59,7 @@
 
         headOfRow {
             bindings = <&kp LC(A)>;
-            key-positions = <16 17>;
+            key-positions = <16 15>;
             layers = <0 1 2>;
         };
 
@@ -83,13 +83,13 @@
 
         allLShift {
             bindings = <&kp LEFT_SHIFT>;
-            key-positions = <13 14>;
+            key-positions = <2 3>;
             layers = <0 1 2>;
         };
 
         allRShift {
             bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <15 16>;
+            key-positions = <6 7>;
             layers = <0 1 2>;
         };
 
