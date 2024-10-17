@@ -11,32 +11,17 @@
 #define LOWER 2
 
 / {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-     };
-
-   combos {
+    combos {
         compatible = "zmk,combos";
 
         toRise {
             bindings = <&to 1>;
             key-positions = <31 32>;
-            layers = <0 1 2>;
         };
 
         toLower {
             bindings = <&to 2>;
             key-positions = <30 33>;
-            layers = <0 1 2>;
         };
 
         repeat {
@@ -105,10 +90,10 @@
 
         base {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P       &kp G        &kp J      &kp L          &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T       &kp D        &kp H      &kp N          &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp V       &kp B        &kp K      &kp M          &kp COMMA  &kp DOT  &kp QUESTION
-                     &kp ESCAPE  &kp SPACE    &kp ENTER  &kp BACKSPACE
+&kp Q  &kp W  &kp F  &kp P       &kp G          &kp J        &kp L          &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T       &kp D          &kp H        &kp N          &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V       &kp B          &kp K        &kp M          &kp COMMA  &kp DOT  &kp QUESTION
+                     &kp ESCAPE  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE
             >;
         };
 
