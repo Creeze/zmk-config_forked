@@ -12,37 +12,32 @@
 
 / {
    
-combos {
+    combos {
         compatible = "zmk,combos";
 
         toRise {
             bindings = <&to 1>;
             key-positions = <31 32>;
-            layers = <0 1 2>;
         };
 
         toLower {
             bindings = <&to 2>;
             key-positions = <33 30>;
-            layers = <0 1 2>;
         };
 
         repeat {
             bindings = <&key_repeat>;
             key-positions = <14 15>;
-            layers = <0 1 2>;
         };
 
         allLeftCommand {
             bindings = <&kp LEFT_COMMAND>;
             key-positions = <13 12>;
-            layers = <1>;
         };
 
         allLeftControl {
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <11 12>;
-            layers = <1>;
         };
 
         allLeftShift {
