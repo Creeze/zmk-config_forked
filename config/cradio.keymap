@@ -11,84 +11,58 @@
 #define LOWER 2
 
 / {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-     };
-
-  combos {
+   
+combos {
         compatible = "zmk,combos";
 
         toRise {
             bindings = <&to 1>;
             key-positions = <31 32>;
+            layers = <0 1 2>;
         };
 
         toLower {
             bindings = <&to 2>;
-            key-positions = <30 33>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <33 30>;
             layers = <0 1 2>;
         };
 
-        allLOption {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <10 11>;
-            layers = <0 1 2>;
-        };
-
-        headOfRow {
-            bindings = <&kp HOME>;
-            key-positions = <15 14>;
-            layers = <0 1 2>;
-        };
-
-        endOfRow {
-            bindings = <&kp END>;
-            key-positions = <19 10>;
-            layers = <0 1 2>;
-        };
-
-        allRCommand {
-            bindings = <&kp RIGHT_COMMAND>;
-            key-positions = <7 8>;
-            layers = <0 1 2>;
-        };
-
-        allLControl {
-            bindings = <&kp LEFT_CONTROL>;
-            key-positions = <11 12>;
-            layers = <0 1 2>;
-        };
-
-        allLShift {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <2 3>;
-            layers = <0 1 2>;
-        };
-
-        allRShift {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <6 7>;
+        repeat {
+            bindings = <&key_repeat>;
+            key-positions = <14 15>;
             layers = <0 1 2>;
         };
 
         allLeftCommand {
             bindings = <&kp LEFT_COMMAND>;
             key-positions = <13 12>;
-            layers = <0 1 2>;
+            layers = <1>;
+        };
+
+        allLeftControl {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <11 12>;
+            layers = <1>;
+        };
+
+        allLeftShift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <2 3>;
+        };
+
+        allLeftOption {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <10 11>;
+        };
+
+        allRightCommand {
+            bindings = <&kp RIGHT_COMMAND>;
+            key-positions = <16 17>;
+        };
+
+        allRightShift {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <6 7>;
         };
     };
 
@@ -97,10 +71,10 @@
 
         base {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P       &kp G          &kp J        &kp L          &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T       &kp D          &kp H        &kp N          &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp V       &kp B          &kp K        &kp M          &kp COMMA  &kp DOT  &kp QUESTION
-                     &kp ESCAPE  &lt 1 SPACE    &lt 2 ENTER  &kp BACKSPACE
+&kp Q  &kp W  &kp F  &kp P    &kp G          &kp J        &kp L     &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T    &kp D          &kp H        &kp N     &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V    &kp B          &kp K        &kp M     &kp COMMA  &kp DOT  &kp QUESTION
+                     &kp ESC  &lt 1 SPACE    &lt 2 ENTER  &kp BSPC
             >;
         };
 
@@ -115,10 +89,10 @@
 
         lower {
             bindings = <
-&bootloader    &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp LA(LS(LEFT_ARROW))   &kp KP_NUMBER_7   &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
+&bootloader    &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp RS(RA(LEFT_ARROW))   &kp KP_NUMBER_7   &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
 &kp RG(RS(T))  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp K_VOLUME_DOWN    &kp LS(LA(RIGHT_ARROW))  &kp KP_NUMBER_4   &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
-&kp RG(Z)      &kp RG(X)           &kp RG(C)       &kp RG(V)            &kp RG(RS(Z))        &kp KP_NUMBER_0          &kp KP_NUMBER_1   &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
-                                                   &kp GRAVE            &to 0                &kp ENTER                &kp RC(UP_ARROW)
+&kp K_UNDO     &kp K_CUT           &kp K_COPY      &kp K_PASTE          &kp K_REDO           &kp KP_NUMBER_0          &kp KP_NUMBER_1   &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
+                                                   &kp GRAVE            &to 0                &kp ENTER                &kp LC(UP_ARROW)
             >;
         };
     };
