@@ -12,7 +12,7 @@
 
 / {
    
-   combos {
+  combos {
         compatible = "zmk,combos";
 
         toRise {
@@ -84,10 +84,10 @@
 
         lower {
             bindings = <
-&bootloader    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp RG(TAB)  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
-&kp RG(RS(T))  &kp RC(RS(TAB))     &kp DOWN_ARROW    &kp RC(TAB)          &kp K_VOLUME_DOWN    &kp MINUS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
-&kp RG(Z)      &kp RG(X)           &kp RG(C)         &kp RG(V)            &kp RG(RS(Z))        &kp PERIOD   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
-                                                     &kp GRAVE            &to 0                &kp ENTER    &kp KP_NUMBER_0
+&bootloader    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &bt BT_CLR  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
+&kp RG(RS(T))  &kp RC(RS(TAB))     &kp LS(LC(E))     &kp RC(TAB)          &kp K_VOLUME_DOWN    &kp MINUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
+&kp RG(Z)      &kp RG(X)           &kp RG(C)         &kp RG(V)            &kp RG(RS(Z))        &kp PERIOD  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
+                                                     &kp GRAVE            &to 0                &kp ENTER   &kp KP_NUMBER_0
             >;
         };
     };
