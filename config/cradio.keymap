@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define RAISE 1
@@ -25,21 +26,16 @@
 
         repeat {
             bindings = <&key_repeat>;
-            key-positions = <14 15>;
-        };
-
-        allLeftCommand {
-            bindings = <&kp LEFT_COMMAND>;
-            key-positions = <13 12>;
+            key-positions = <4 5>;
         };
 
         allLeftOption {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <10 11>;
+            bindings = <&sk LEFT_ALT>;
+            key-positions = <13 12>;
         };
 
         allRightCommand {
-            bindings = <&kp RIGHT_COMMAND>;
+            bindings = <&sk RIGHT_COMMAND>;
             key-positions = <16 17>;
         };
 
@@ -52,6 +48,18 @@
             bindings = <&bootloader>;
             key-positions = <0 1>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+            layers = <0 1 2>;
+        };
+
+        to0 {
+            bindings = <&to 0>;
+            key-positions = <13 16>;
+            layers = <0 1 2 3>;
+        };
     };
 
     keymap {
@@ -59,10 +67,10 @@
 
         base {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P                  &kp G          &kp J        &kp L                        &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T                  &kp D          &kp H        &kp N                        &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp V                  &kp B          &kp K        &kp M                        &kp COMMA  &kp DOT  &kp QUESTION
-                     &mt LEFT_SHIFT ESCAPE  &lt 1 SPACE    &lt 2 ENTER  &mt RIGHT_CONTROL BACKSPACE
+&kp Q  &kp W  &kp F  &kp P  &kp G                     &kp J                      &kp L  &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T  &kp D                     &kp H                      &kp N  &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V  &kp B                     &kp K                      &kp M  &kp COMMA  &kp DOT  &kp QUESTION
+                     &sl 1  &mt LEFT_CONTROL SPACE    &mt RIGHT_SHIFT BACKSPACE  &sl 2
             >;
         };
 
@@ -71,16 +79,25 @@
 &kp EXCLAMATION    &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT         &kp CARET      &kp AMPERSAND   &kp ASTERISK  &kp PIPE        &kp TILDE
 &kp DOUBLE_QUOTES  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LESS_THAN       &kp SLASH      &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp SINGLE_QUOTE   &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &kp BACKSLASH  &kp MINUS       &kp PLUS      &kp EQUAL       &kp UNDERSCORE
-                                                       &kp CAPSLOCK           &to 0               &kp TAB        &kp DELETE
+                                                       &kp ESCAPE             &sk LEFT_CONTROL    &kp DELETE     &to 2
             >;
         };
 
         lower {
             bindings = <
-&trans         &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp RG(TAB)  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
-&kp RG(RS(T))  &kp RC(RS(TAB))     &kp LS(LC(E))     &kp RC(TAB)          &kp K_VOLUME_DOWN    &kp MINUS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp BACKSPACE
-&kp RG(Z)      &kp RG(X)           &kp RG(C)         &kp RG(V)            &kp RG(RS(Z))        &kp PERIOD   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
-                                                     &kp GRAVE            &to 0                &kp ENTER    &kp KP_NUMBER_0
+&kp GRAVE             &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp DOT          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
+&sk LS(LEFT_COMMAND)  &kp RC(RS(TAB))     &kp LG(TAB)       &kp RC(TAB)          &kp K_VOLUME_DOWN    &kp MINUS        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &sk RS(RIGHT_CONTROL)
+&trans                &trans              &trans            &trans               &kp RG(RS(Z))        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
+                                                            &to 3                &kp CAPSLOCK         &kp BACKSPACE    &kp ENTER
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans          &mmv MOVE_UP    &trans           &trans       &trans     &trans          &msc SCRL_UP    &trans           &trans
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans       &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
+&trans  &trans          &trans          &trans           &trans       &trans     &trans          &trans          &trans           &trans
+                                        &trans           &mkp LCLK    &mkp RCLK  &trans
             >;
         };
     };
