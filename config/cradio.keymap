@@ -49,12 +49,6 @@
             key-positions = <0 1>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-            layers = <0 1 2>;
-        };
-
         to0 {
             bindings = <&to 0>;
             key-positions = <13 16>;
@@ -79,7 +73,7 @@
 &kp EXCLAMATION    &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT         &kp CARET      &kp AMPERSAND   &kp ASTERISK  &kp PIPE        &kp TILDE
 &kp DOUBLE_QUOTES  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LESS_THAN       &kp SLASH      &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp SINGLE_QUOTE   &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &kp BACKSLASH  &kp MINUS       &kp PLUS      &kp EQUAL       &kp UNDERSCORE
-                                                       &kp ESCAPE             &sk LEFT_CONTROL    &kp DELETE     &to 2
+                                                       &kp ESCAPE             &kp TAB             &kp DELETE     &to 2
             >;
         };
 
