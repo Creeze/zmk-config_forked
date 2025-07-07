@@ -9,18 +9,19 @@
 #define BASE 0
 #define RAISE 1
 #define LOWER 2
+#define MOUSE 3
 
 / {
     combos {
         compatible = "zmk,combos";
 
         toRise {
-            bindings = <&to 1>;
+            bindings = <&sl 1>;
             key-positions = <31 32>;
         };
 
         toLower {
-            bindings = <&to 2>;
+            bindings = <&sl 2>;
             key-positions = <33 30>;
         };
 
@@ -29,8 +30,8 @@
             key-positions = <4 5>;
         };
 
-        allLeftOption {
-            bindings = <&sk LEFT_ALT>;
+        allLeftControl {
+            bindings = <&sk LEFT_CONTROL>;
             key-positions = <13 12>;
         };
 
@@ -49,6 +50,12 @@
             key-positions = <0 1>;
         };
 
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+            layers = <0 1 2>;
+        };
+
         to0 {
             bindings = <&to 0>;
             key-positions = <13 16>;
@@ -61,10 +68,10 @@
 
         base {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P  &kp G                     &kp J                      &kp L  &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T  &kp D                     &kp H                      &kp N  &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp V  &kp B                     &kp K                      &kp M  &kp COMMA  &kp DOT  &kp QUESTION
-                     &sl 1  &mt LEFT_CONTROL SPACE    &mt RIGHT_SHIFT BACKSPACE  &sl 2
+&kp Q  &kp W  &kp F  &kp P       &kp G                 &kp J                  &kp L          &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T       &kp D                 &kp H                  &kp N          &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V       &kp B                 &kp K                  &kp M          &kp COMMA  &kp DOT  &kp QUESTION
+                     &kp ESCAPE  &mt LEFT_ALT SPACE    &mt RIGHT_SHIFT ENTER  &kp BACKSPACE
             >;
         };
 
@@ -73,16 +80,16 @@
 &kp EXCLAMATION    &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT         &kp CARET      &kp AMPERSAND   &kp ASTERISK  &kp PIPE        &kp TILDE
 &kp DOUBLE_QUOTES  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LESS_THAN       &kp SLASH      &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp SINGLE_QUOTE   &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &kp BACKSLASH  &kp MINUS       &kp PLUS      &kp EQUAL       &kp UNDERSCORE
-                                                       &kp ESCAPE             &kp TAB             &kp DELETE     &to 2
+                                                       &kp GRAVE              &kp CAPSLOCK        &kp DELETE     &to 2
             >;
         };
 
         lower {
             bindings = <
-&kp GRAVE             &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_VOLUME_UP      &kp DOT          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
-&sk LS(LEFT_COMMAND)  &kp RC(RS(TAB))     &kp LG(TAB)       &kp RC(TAB)          &kp K_VOLUME_DOWN    &kp MINUS        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &sk RS(RIGHT_CONTROL)
-&trans                &trans              &trans            &trans               &kp RG(RS(Z))        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
-                                                            &to 3                &kp CAPSLOCK         &kp BACKSPACE    &kp ENTER
+&kp C_VOLUME_UP    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &sk LS(LEFT_CONTROL)    &kp DOT          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
+&kp C_VOLUME_DOWN  &kp RC(RS(TAB))     &kp LG(TAB)       &kp RC(TAB)          &sk LS(LEFT_COMMAND)    &kp MINUS        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp RS(RG(N5))
+&trans             &kp LA(LEFT_ARROW)  &trans            &kp LA(RIGHT_ARROW)  &kp RG(RS(Z))           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_4))
+                                                         &to 3                &trans                  &kp BACKSPACE    &kp ENTER
             >;
         };
 
