@@ -50,12 +50,6 @@
             key-positions = <0 1>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-            layers = <0 1 2>;
-        };
-
         to0 {
             bindings = <&to 0>;
             key-positions = <13 16>;
@@ -68,10 +62,10 @@
 
         base {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P                &kp G                     &kp J                  &kp L                    &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T                &kp D                     &kp H                  &kp N                    &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp V                &kp B                     &kp K                  &kp M                    &kp COMMA  &kp DOT  &kp QUESTION
-                     &mt LEFT_ALT ESCAPE  &mt LEFT_CONTROL SPACE    &mt RIGHT_SHIFT ENTER  &mt RIGHT_GUI BACKSPACE
+&kp Q  &kp W  &kp F  &kp P                  &kp G          &kp J        &kp L                    &kp U      &kp Y    &kp SEMI
+&kp A  &kp R  &kp S  &kp T                  &kp D          &kp H        &kp N                    &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp V                  &kp B          &kp K        &kp M                    &kp COMMA  &kp DOT  &kp QUESTION
+                     &mt LEFT_SHIFT ESCAPE  &lt 1 SPACE    &lt 2 ENTER  &mt RIGHT_ALT BACKSPACE
             >;
         };
 
@@ -89,16 +83,16 @@
 &kp C_VOLUME_UP    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT_ARROW)  &sk LS(LEFT_CONTROL)    &kp DOT          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp RS(RG(NUMBER_3))
 &kp C_VOLUME_DOWN  &kp RC(RS(TAB))     &kp LG(TAB)       &kp RC(TAB)          &sk LS(LEFT_COMMAND)    &kp MINUS        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp RS(RG(NUMBER_4))
 &trans             &kp LA(LEFT_ARROW)  &trans            &kp LA(RIGHT_ARROW)  &kp RG(RS(Z))           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(RG(NUMBER_5))
-                                                         &to 3                &to 2                   &kp BACKSPACE    &kp ENTER
+                                                         &to 3                &kp TAB                 &kp BACKSPACE    &kp ENTER
             >;
         };
 
         mouse {
             bindings = <
-&trans  &trans          &mmv MOVE_UP    &trans           &trans       &trans     &trans          &msc SCRL_UP    &trans           &trans
-&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans       &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
-&trans  &trans          &trans          &trans           &trans       &trans     &trans          &trans          &trans           &trans
-                                        &trans           &mkp LCLK    &mkp RCLK  &trans
+&none  &none           &mmv MOVE_UP    &none            &none        &none      &none           &msc SCRL_UP    &none            &none
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none        &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
+&none  &none           &none           &none            &none        &none      &none           &none           &none            &none
+                                       &none            &mkp LCLK    &mkp RCLK  &none
             >;
         };
     };
